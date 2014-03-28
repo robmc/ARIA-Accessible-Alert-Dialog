@@ -1,0 +1,23 @@
+<html lang="en">
+	<head>
+		<title>ARIA AlertDialog Example</title>
+
+		<link rel="stylesheet" href="stylesheet.css" type="text/css">
+		<script src="javascript.js" type="text/javascript"></script>
+
+	</head>
+	<body onload="toggleAriaHidden();">
+		<div id="main">
+			<input type="button" id="activation-button" value="Activate this to see the dialog alert" onclick="toggle(); toggleAriaHidden();">
+		</div>
+		<div id="alert-dialog" role="alertdialog" aria-labelledby="dialog-title" style="display: none;">
+			<span class="hidden">Beginning of dialog content</span>
+			<h3 id="dialog-title">Confirmation</h3>
+			<p>Are you sure?</p>
+			<button id="cancel-button" onclick="toggle(); toggleAriaHidden(); returnFocus();">Cancel</button>
+			<button id="confirm-button" onclick="toggle(); toggleAriaHidden(); returnFocus();" onkeypress="retainFocus(event);"s>Confirm</button>
+			<span class="hidden">End of dialog content</span>
+		</div>
+		<div id="modal-overlay" style="display: none;"></div>
+	</body>
+</html>
